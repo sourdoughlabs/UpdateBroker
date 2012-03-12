@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "updatebroker"
   s.version     = Updatebroker::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.authors     = ["Vince Hodges"]
+  s.email       = ["vince@sourdoughlabs.com"]
+  s.homepage    = "https://github.com/sourdoughlabs/UpdateBroker"
+  s.summary     = %q{Broker updates from apps to connected web clients}
+  s.description = %q{Simple service (using Goliath) for reading updates from redis and sending them to clients using SSE}
 
   s.rubyforge_project = "updatebroker"
 
@@ -18,4 +18,9 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+
+  s.add_dependency "hiredis", "~> 0.3.1"
+  s.add_dependency "em-hiredis"
+  s.add_dependency "em-synchrony"
+  s.add_dependency "goliath"
 end
