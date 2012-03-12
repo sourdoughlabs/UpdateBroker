@@ -1,34 +1,34 @@
-h2. Welcome
+## Welcome
 
 This is a simple service for routing update events from an app to connected
 web clients using Server Sent Events that are read from a named redis pub/sub
 queue.
 
-h2. Requirements
+## Requirements
 
  Redis
  Ruby >= 1.9.2
 
-h2. Installation
+## Installation
 
   gem install updatebroker
 
 Note, do NOT add this to your Gemfile (for Rails 3.1 anyways).  It brings in
 asynch-rack which seems to conflict.
 
-h2. Usage
+## Usage
 
   updatebroker --help
 
-h2. Adding support for your web app.
+## Adding support for your web app.
 
   See ./example/* [TBD]
 
-h2. Gotchas
+## Gotchas
 
   TBD
 
-h2. License
+## License
 
   MIT
 
