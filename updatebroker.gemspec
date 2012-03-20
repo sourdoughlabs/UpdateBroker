@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "hiredis"
-  s.add_dependency "em-hiredis"
+  s.add_dependency "em-hiredis", '~> 0.1.1'
   s.add_dependency "em-synchrony"
   s.add_dependency "goliath"
 end
