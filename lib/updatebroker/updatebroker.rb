@@ -35,7 +35,7 @@ class UpdateBroker < Goliath::API
 
   def on_close(env)
     path = env[Goliath::Request::REQUEST_PATH]
-    return unless path == "/events"
+    return unless path === "/events"
 
     channel = env.params[:channel]
     return if channel.nil? || channel == ""
@@ -43,7 +43,7 @@ class UpdateBroker < Goliath::API
     env.logger.info "Connection closed, Unsubscribing."
     unless env['redis'].nil?
       env['redis'].unsubscribe(channel)
-      env['redis'].close
+      env['redis'].close_connection
     end
   end
 
