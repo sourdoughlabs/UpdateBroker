@@ -43,7 +43,7 @@ class UpdateBroker < Goliath::API
     env.logger.info "Connection closed, Unsubscribing."
     unless env['redis'].nil?
       env['redis'].unsubscribe(channel)
-      env['redis'].close_connection
+      env['redis'].quit
     end
   end
 
