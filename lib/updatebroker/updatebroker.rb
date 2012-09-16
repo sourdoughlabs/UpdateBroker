@@ -44,6 +44,7 @@ class UpdateBroker < Goliath::API
     unless env['redis'].nil?
       env['redis'].unsubscribe(channel)
       env['redis'].quit
+      env['redis'].close_connection
     end
   end
 
