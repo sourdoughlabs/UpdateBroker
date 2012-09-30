@@ -14,9 +14,11 @@ class UpdateBroker < Goliath::API
 
   def response(env)
     path = env[Goliath::Request::REQUEST_PATH]
+    env.logger.info "Request for '#{path}'"
     return [404, {}, "Not found"] unless path == "/events"
 
     channel = env.params[:channel]
+    env.logger.info "On channel '#{channel}'"
     return [404, {}, "Channel required"] if channel.nil? || channel == ""
 
     env.logger.info "Connecting to channel '#{channel}'@#{options[:redis]} for updates"
